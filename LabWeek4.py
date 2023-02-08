@@ -15,9 +15,10 @@ while True:
 
     try:
         aqdata = pm25.read()
-        # print(aqdata)
+        print(aqdata)
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
+
 
   
