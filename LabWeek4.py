@@ -28,10 +28,7 @@ while True:
     )
     print("Concentration Units (environmental)")
     print("---------------------------------------")
-    print(
-        "PM 1.0: %d\tPM2.5: %d\tPM10: %d"
-        % (aqdata["pm10 env"], aqdata["pm25 env"], aqdata["pm100 env"])
-    )
+    print(time)
 
 
 
