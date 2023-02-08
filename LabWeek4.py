@@ -19,7 +19,7 @@ while True:
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
-     print()
+    print()
     print("Concentration Units (standard)")
     print("---------------------------------------")
     print(
