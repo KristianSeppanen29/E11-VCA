@@ -14,6 +14,8 @@ import csv
 f = open("data.csv", "w", newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
+writer.writerow(aqdata)
+f.close()
 
 while True:
     time.sleep(1)
