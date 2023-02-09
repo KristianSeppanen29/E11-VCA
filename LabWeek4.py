@@ -19,6 +19,7 @@ while True:
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
+    time.asctime(time.localtime())
     print()
     print("Concentration Units (standard)")
     print("---------------------------------------")
@@ -28,7 +29,6 @@ while True:
     )
     print("Concentration Units (environmental)")
     print("---------------------------------------")
-    print(time)
 
 
 
