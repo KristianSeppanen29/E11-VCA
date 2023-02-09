@@ -21,6 +21,8 @@ while True:
         continue
     Itime = time.asctime(time.localtime())
     print(Itime)
+    Utime = time.time
+    Print(Utime)
     print()
     print("Concentration Units (standard)")
     print("---------------------------------------")
