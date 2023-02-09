@@ -14,8 +14,6 @@ import csv
 f = open("data.csv", "w", newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
-writer.writerow(aqdata)
-f.close()
 
 while True:
     time.sleep(1)
@@ -39,7 +37,8 @@ while True:
     )
     print("Concentration Units (environmental)")
     print("---------------------------------------")
-    
+    data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
+    writer.writerow(data)
 
 
 
