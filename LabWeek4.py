@@ -9,6 +9,11 @@ uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout = 0.25)
 from adafruit_pm25.uart import PM25_UART
 pm25 = PM25_UART(uart, reset_pin)
 print("Found PM2.5 sensor, reading data...")
+meta_data = ["PM 1.0", "PM 2.5", "PM 10"]
+import csv
+f = open("data.csv", "w", newline = '')
+writer = csv.writer(f)
+writer.writerow(meta_data)
 
 while True:
     time.sleep(1)
@@ -32,6 +37,10 @@ while True:
     )
     print("Concentration Units (environmental)")
     print("---------------------------------------")
+   )
+
+
+
 
 
 
