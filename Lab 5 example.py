@@ -12,7 +12,7 @@ itime = start_time
 
 
 
-while True < (start_time + run_time)
+while itime < (start_time + run_time):
     itime = time.time()
     idata = ramdom.random()
     print(itime, idata)
