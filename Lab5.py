@@ -36,13 +36,13 @@ while itime < (start_time + run_time):
         continue
     Utime = time.asctime(time.localtime())
     print(Utime)
-    Itime = time.time()
+    itime = time.time()
     print("\nTemperature: %0.1f C" % bme680.temperature)
     print("Gas: %d ohm" % bme680.gas)
     print("Humidty: %0.3f %%" % bme680.relative_humidity)
     print("Pressure: %0.3f  hPa" %bme680.pressure)
     print("Altitude = %0.2f meters " % bme680.altitude)
-    print(Itime)
+    print(itime)
     print()
     print("Concentration Units (standard)")
     print("---------------------------------------")
@@ -52,7 +52,7 @@ while itime < (start_time + run_time):
     )
     print("Concentration Units (environmental)")
     print("---------------------------------------")
-    data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature,bme680.gas,bme680.pressure,bme680.altitude,bme680.relative_humidity,Itime)
+    data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature,bme680.gas,bme680.pressure,bme680.altitude,bme680.relative_humidity,itime)
     writer.writerow(data)
 
 
