@@ -18,6 +18,9 @@ pm25 = PM25_UART(uart, reset_pin)
 print("Found PM2.5 sensor, reading data...")
 meta_data = ["PM 1.0", "PM 2.5", "PM 10", "temperature", "gas", "relative humidity", "pressure", "altitude"]
 import csv
+start_time = time.time()
+run_time = int(sys.argv[1])
+itime = start_time
 f = open("data.csv", "w", newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
