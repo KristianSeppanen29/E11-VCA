@@ -16,7 +16,7 @@ uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout = 0.95)
 from adafruit_pm25.uart import PM25_UART
 pm25 = PM25_UART(uart, reset_pin)
 print("Found PM2.5 sensor, reading data...")
-meta_data = ["PM 1.0", "PM 2.5", "PM 10", "temperature", "gas", "relative humidity", "pressure", "altitude"]
+meta_data = ["PM 1.0", "PM 2.5", "PM 10", "temperature", "gas", "relative humidity", "pressure", "altitude", "time"]
 import csv
 start_time = time.time()
 run_time = int(sys.argv[1])
@@ -34,15 +34,15 @@ while itime < (start_time + run_time):
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
-    Itime = time.asctime(time.localtime())
-    print(Itime)
-    Utime = time.time
+    Utime = time.asctime(time.localtime())
+    print(Utime)
+    Itime = time.time
     print("\nTemperature: %0.1f C" % bme680.temperature)
     print("Gas: %d ohm" % bme680.gas)
     print("Humidty: %0.3f %%" % bme680.relative_humidity)
     print("Pressure: %0.3f  hPa" %bme680.pressure)
     print("Altitude = %0.2f meters " % bme680.altitude)
-    print(Utime)
+    print(Itime)
     print()
     print("Concentration Units (standard)")
     print("---------------------------------------")
@@ -52,7 +52,7 @@ while itime < (start_time + run_time):
     )
     print("Concentration Units (environmental)")
     print("---------------------------------------")
-    data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature,bme680.gas,bme680.pressure,bme680.altitude,bme680.relative_humidity,Utime)
+    data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature,bme680.gas,bme680.pressure,bme680.altitude,bme680.relative_humidity,Itime)
     writer.writerow(data)
 
 
