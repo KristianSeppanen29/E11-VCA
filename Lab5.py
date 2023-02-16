@@ -22,7 +22,7 @@ writer = csv.writer(f)
 writer.writerow(meta_data)
 
 while itime < (start_time + run_time):
-   time.sleep(1)
+    time.sleep(1)
 
     try:
         aqdata = pm25.read()
@@ -48,7 +48,7 @@ while itime < (start_time + run_time):
     )
     print("Concentration Units (environmental)")
     print("---------------------------------------")
-    data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
+    data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature,bme680.gas,bme680.pressure,bme680.altitude,bme680.relative_humidity,Utime)
     writer.writerow(data)
 
 
