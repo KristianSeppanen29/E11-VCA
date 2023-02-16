@@ -36,7 +36,7 @@ while itime < (start_time + run_time):
         continue
     Utime = time.asctime(time.localtime())
     print(Utime)
-    Itime = time.time
+    Itime = time.time()
     print("\nTemperature: %0.1f C" % bme680.temperature)
     print("Gas: %d ohm" % bme680.gas)
     print("Humidty: %0.3f %%" % bme680.relative_humidity)
