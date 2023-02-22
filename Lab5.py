@@ -24,7 +24,8 @@ itime = start_time
 f = open("data.csv", "w", newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
-time.sleep(30)
+
+time.sleep(90)
 
 while itime < (start_time + run_time):
     time.sleep(1)
