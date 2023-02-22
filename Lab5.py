@@ -21,7 +21,7 @@ import csv
 start_time = time.time()
 run_time = int(sys.argv[1])
 itime = start_time
-f = open("data.csv", "w", newline = '')
+f = open("outdoor_data.csv", "w", newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
