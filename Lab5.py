@@ -24,6 +24,7 @@ itime = start_time
 f = open("data.csv", "w", newline = '')
 writer = csv.writer(f)
 writer.writerow(meta_data)
+time.sleep(30)
 
 while itime < (start_time + run_time):
     time.sleep(1)
@@ -54,7 +55,7 @@ while itime < (start_time + run_time):
     print("---------------------------------------")
     data = (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature,bme680.gas,bme680.pressure,bme680.altitude,bme680.relative_humidity,itime)
     writer.writerow(data)
-
+ 
 
 
 
