@@ -5,7 +5,7 @@ import datetime
 import time
 import csv
 counts = 0
-metadata = [time, counts]
+meta_data = [time, counts]
 f = open("radiation_sensor_data", "w", newline = '') 
 writer = csv.writer(f)
 writer.writerow(meta_data)
