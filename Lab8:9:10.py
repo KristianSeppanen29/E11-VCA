@@ -5,7 +5,7 @@ import datetime
 import time
 import csv
 counts = 0
-meta_data = [time, counts]
+meta_data = ["time", "counts"]
 f = open("radiation_sensor_data", "w", newline = '') 
 writer = csv.writer(f)
 writer.writerow(meta_data)
@@ -16,6 +16,7 @@ data = GPIO.HIGH
 def my_callback(channel):
      global counts 
      counts+=1
+     print(counts)
     
 
   
@@ -30,11 +31,9 @@ start_time = time.time()
 start_time += 60
 big_time = start_time
 while time.time()<=big_time:
-    message = ('\nPress any key to exit.\n')
     time.sleep(10)
     currenttime = time.time
     counts = counts
-    writer = csv.writer(f)
     writer.writerow([currenttime, counts])
     counts = 0
 
