@@ -21,8 +21,8 @@ def my_callback(channel):
 
   
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(5, GPIO.IN)
-GPIO.add_event_detect(5, GPIO.FALLING, callback=my_callback)
+GPIO.setup(6, GPIO.IN)
+GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
 
 
  
@@ -36,6 +36,7 @@ while time.time()<=big_time:
     counts = counts
     writer.writerow([currenttime, counts])
     counts = 0
+f.close()
 
 
     
