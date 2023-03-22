@@ -30,7 +30,7 @@ start_time = time.time()
 start_time += 60
 big_time = start_time
 while time.time()<=big_time:
-    message = raw_input('\nPress any key to exit.\n')
+    message = ('\nPress any key to exit.\n')
     time.sleep(10)
     currenttime = time.time
     counts = counts
