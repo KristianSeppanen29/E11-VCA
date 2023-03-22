@@ -4,12 +4,14 @@ import RPi.GPIO as GPIO
 import datetime
 import time
 import csv
-metadata = "[time, counts]"
+counts = 0
+metadata = [time, counts]
 f = open("radiation_sensor_data", "w", newline = '') 
 writer = csv.writer(f)
 writer.writerow(meta_data)
 data = GPIO.HIGH
-counts = 0
+
+
  
 def my_callback(channel):
      global counts 
