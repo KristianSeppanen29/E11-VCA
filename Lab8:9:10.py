@@ -27,7 +27,7 @@ GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
  
 
 start_time = time.time()
-start_time += 60
+start_time += 120
 big_time = start_time
 while time.time()<=big_time:
     time.sleep(10)
