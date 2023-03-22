@@ -9,7 +9,6 @@ meta_data = ["time", "counts"]
 f = open("radiation_sensor_data", "w", newline = '') 
 writer = csv.writer(f)
 writer.writerow(meta_data)
-data = GPIO.HIGH
 
 
  
@@ -33,7 +32,6 @@ big_time = start_time
 while time.time()<=big_time:
     time.sleep(10)
     currenttime = time.time()
-    counts = counts
     writer.writerow([currenttime, counts])
     counts = 0
 f.close()
