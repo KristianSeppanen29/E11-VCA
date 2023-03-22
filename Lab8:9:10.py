@@ -3,7 +3,7 @@
 import RPi.GPIO as GPIO
 import datetime
 import time
-metadata = "radiation"
+metadata = [time, counts]
 f = open("radiation_sensor_data", "w", newline = '') 
 writer = csv.writer(f)
 writer.writerow(meta_data)
@@ -26,12 +26,11 @@ GPIO.add_event_detect(5, GPIO.FALLING, callback=my_callback)
 starttime = time.time
 while time.time<=start_time+60:
     message = raw_input('\nPress any key to exit.\n')
+    time.sleep(10)
     currenttime = time.time
     counts = counts
     writer = csv.writer(f)
-    writer.writerow(currenttime, counts)
-    writer.writerow(data)
-    time.sleep(10)
+    writer.writerow([currenttime, counts])
     counts = 0
 
 
