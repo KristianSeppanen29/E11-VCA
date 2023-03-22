@@ -3,7 +3,7 @@
 import RPi.GPIO as GPIO
 import datetime
 import time
-metadata = [time, counts]
+metadata = "[time, counts]"
 f = open("radiation_sensor_data", "w", newline = '') 
 writer = csv.writer(f)
 writer.writerow(meta_data)
