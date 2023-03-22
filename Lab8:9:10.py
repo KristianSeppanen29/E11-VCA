@@ -32,7 +32,7 @@ start_time += 60
 big_time = start_time
 while time.time()<=big_time:
     time.sleep(10)
-    currenttime = time.time
+    currenttime = time.time()
     counts = counts
     writer.writerow([currenttime, counts])
     counts = 0
