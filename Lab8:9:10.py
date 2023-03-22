@@ -26,10 +26,10 @@ GPIO.add_event_detect(5, GPIO.FALLING, callback=my_callback)
 
  
 
-start_time = time.time
-start_time+=60
+start_time = time.time()
+start_time += 60
 big_time = start_time
-while time.time<=big_time:
+while time.time()<=big_time:
     message = raw_input('\nPress any key to exit.\n')
     time.sleep(10)
     currenttime = time.time
